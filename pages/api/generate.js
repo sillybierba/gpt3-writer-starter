@@ -22,7 +22,7 @@ const generateAction = async (req, res) => {
         + `\nNow, write me a Soviet joke about ${req.body.userInput}.`
         + " Again, please mimic the style of the examples as much as possible."
         + " Make sure to make fun of some USSR concepts such as Stalin, Khrushchev, Brezhnev, Gorbachev, KGB, etc."
-        + "\n-- Joke --";
+        + "\n\n-- Joke --";
     console.log("API: " + prompt);
 
     const baseCompletion = await openai.createCompletion({
