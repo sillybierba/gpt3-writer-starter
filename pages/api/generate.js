@@ -18,7 +18,12 @@ const getBasePrompt = () => {
 const generateAction = async (req, res) => {
     // Run first prompt
     const basePromptPrefix = getBasePrompt();
-    const prompt = `${basePromptPrefix} ${req.body.userInput}.` + "\nJoke 31:";
+    const prompt = basePromptPrefix
+        + `Now, write me a Soviet joke about ${req.body.userInput}.`
+        + " Again, please mimic the style of the examples as much as possible."
+        + " Try to refer to USSR concepts such as Stalin, Khrushchev, Brezhnev, Gorbachev, KGB, 5 year plan, etc,"
+        + " as much as possible too."
+        + "\nJoke 31:";
     console.log("API: " + prompt);
 
     const baseCompletion = await openai.createCompletion({
